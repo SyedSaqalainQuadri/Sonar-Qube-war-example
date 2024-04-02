@@ -3,7 +3,7 @@ pipeline{
     stages{
        stage('Git Checkout Stage'){
             steps{
-                git branch: 'main', url: 'https://github.com/artisantek/sonarqube-example.git'
+                git branch: 'main', url: 'https://github.com/tranju664/Sonar-Qube-war-example.git'
             }
          }        
        stage('Build Stage'){
@@ -14,7 +14,7 @@ pipeline{
         stage('SonarQube Analysis Stage') {
             steps{
                 withSonarQubeEnv('sonarqube') { 
-                    sh "mvn clean verify sonar:sonar -Dsonar.projectKey=sonar-test"
+                    sh "mvn clean verify sonar:sonar -Dsonar.projectKey=Sonar-test"
                 }
             }
         }
